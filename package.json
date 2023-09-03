@@ -1,8 +1,10 @@
 {
   "name": "package.json-minifier",
-  "version": "0.0.1-pre1",
+  "version": "0.0.1-pre2",
   "description": "package.json minifier",
-  "bin": "./bin.js",
+  "bin": {
+    "package-json-minifier": "./bin.js"
+  },
   "scripts": {
     "publish": "rimraf dist && mkdirp dist && cpy bin.js dist && node bin.js && cd dist && npm publish"
   },
