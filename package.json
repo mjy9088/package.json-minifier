@@ -1,12 +1,12 @@
 {
   "name": "package.json-minifier",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "package.json minifier",
   "bin": {
     "package-json-minifier": "./bin.js"
   },
   "scripts": {
-    "publish": "rimraf dist && mkdirp dist && cpy bin.js README.md dist && node bin.js && cd dist && npm publish"
+    "publish": "rimraf dist && mkdirp dist && cpy README.md dist && rollup -c && node bin.js && cd dist && npm publish"
   },
   "keywords": [
     "package.json",
@@ -19,8 +19,10 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.3",
     "cpy-cli": "^5.0.0",
     "mkdirp": "^3.0.1",
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.1",
+    "rollup": "^3.28.1"
   }
 }
