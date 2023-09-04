@@ -1,6 +1,6 @@
 {
   "name": "package.json-minifier",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "package.json minifier",
   "bin": {
     "package-json-minifier": "./bin.js"
@@ -23,6 +23,7 @@
     "cpy-cli": "^5.0.0",
     "mkdirp": "^3.0.1",
     "rimraf": "^5.0.1",
-    "rollup": "^3.28.1"
+    "rollup": "^3.28.1",
+    "rollup-plugin-shebang-bin": "^0.0.5"
   }
 }

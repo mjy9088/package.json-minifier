@@ -1,4 +1,5 @@
 import terser from '@rollup/plugin-terser';
+import shebang from 'rollup-plugin-shebang-bin';
 
 export default {
   input: 'bin.js',
@@ -6,5 +7,8 @@ export default {
     dir: 'dist',
     format: 'cjs',
   },
-  plugins: [terser()],
+  plugins: [
+    terser(),
+    shebang(),
+  ],
 };
