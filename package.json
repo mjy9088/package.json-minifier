@@ -1,6 +1,6 @@
 {
   "name": "package.json-minifier",
-  "version": "0.0.1-pre3",
+  "version": "0.0.1",
   "description": "package.json minifier",
   "bin": {
     "package-json-minifier": "./bin.js"
