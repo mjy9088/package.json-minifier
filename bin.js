@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-function extractGitHubRepo(inputString) {
+function minifyRepositoryUrl(inputString) {
   const regex = /^https:\/\/github\.com\/([^/]+)\/([^/]+)\.git$/;
   const match = inputString?.match(regex);
 
@@ -12,6 +12,15 @@ function extractGitHubRepo(inputString) {
     return `github:${username}/${repository}`;
   } else {
     return inputString;
+  }
+}
+
+function minifyRepository(repository) {
+  if (repository?.type !== 'git')
+    return repository;
+  return {
+    ...repository,
+    url: minifyRepositoryUrl(repository.url)
   }
 }
 
@@ -58,7 +67,7 @@ const minify = ({
   bin,
   man,
   directories,
-  repository: extractGitHubRepo(repository),
+  repository: minifyRepository(repository),
   dependencies,
   peerDependencies,
   peerDependenciesMeta,
